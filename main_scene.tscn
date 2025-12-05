@@ -1,8 +1,66 @@
-[gd_scene load_steps=2 format=3 uid="uid://0kjxsbr8ri00"]
+[gd_scene load_steps=8 format=3 uid="uid://0kjxsbr8ri00"]
 
 [ext_resource type="PackedScene" uid="uid://bf8ctexfk0mg4" path="res://player.tscn" id="1_0f027"]
+[ext_resource type="Script" uid="uid://tmomr4acaw5w" path="res://main_scene.gd" id="1_gyfs4"]
+[ext_resource type="Texture2D" uid="uid://b87d0t17pe0pn" path="res://assets/sprites/lamp.png" id="2_2c62f"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gyfs4"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d5x1h"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8mm7a"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hq1ik"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_gyfs4")
+
+[node name="Lamp2" type="StaticBody2D" parent="."]
+position = Vector2(480, 567)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Lamp2"]
+position = Vector2(-3, 113.5)
+polygon = PackedVector2Array(-6, 37.5, 1, 37.5, 4, 37.5, 4, 65.5, 7, 66.5, 7, 80.5, 10, 80.5, 10, 83.5, 13, 83.5, 13, 92.5, -23, 92.5, -23, 80.5, -20, 80.5, -20, 77.5, -17, 77.5, -17, 66.5, -14, 65.5, -14, 37.5, -11, 37.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Lamp2"]
+z_index = 1
+position = Vector2(-5.0000005, 114.000015)
+scale = Vector2(0.065, 0.065)
+texture = ExtResource("2_2c62f")
 
 [node name="Player" parent="." instance=ExtResource("1_0f027")]
-speed = null
+position = Vector2(365, 650)
+scale = Vector2(0.98, 0.98)
+
+[node name="Lamp" type="StaticBody2D" parent="."]
+position = Vector2(269, 558)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Lamp"]
+position = Vector2(-3, 113.5)
+polygon = PackedVector2Array(-11, 3.5, -11, -71.5, -8, -71.5, -8, -77.5, -5, -77.5, -5, -79.5, -2, -79.5, -2, -82.5, 0, -82.5, 0.21561813, -82.5, 1, -88.5, 3, -88.5, 3, -91.5, 39, -91.5, 39, -88.5, 41, -88.5, 41, -85.5, 44, -85.5, 44, -73.5, 41, -73.5, 41, -70.5, 9, -70.5, 9, -73.5, 4, -73.5, 4, -70.5, 1, -70.5, 1, 37.5, 4, 37.5, 4, 65.5, 7, 66.5, 7, 80.5, 10, 80.5, 10, 83.5, 13, 83.5, 13, 92.5, -23, 92.5, -23, 80.5, -20, 80.5, -20, 77.5, -17, 77.5, -17, 66.5, -14, 65.5, -14, 37.5, -11, 37.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Lamp"]
+position = Vector2(-5.0000005, 114.000015)
+scale = Vector2(0.065, 0.065)
+texture = ExtResource("2_2c62f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_gyfs4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_d5x1h")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1080)
+shape = SubResource("WorldBoundaryShape2D_8mm7a")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1920, 1080)
+shape = SubResource("WorldBoundaryShape2D_hq1ik")
+
+[connection signal="input_event" from="Lamp" to="." method="_on_lamp_input_event"]
