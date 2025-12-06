@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ehunyxbi1gm5"
-path="res://.godot/imported/16x32 Idle-Sheet.png-af0135beb87b6011203ff21b2c5d25b6.ctex"
+uid="uid://57bhgpd82km8"
+path="res://.godot/imported/basicClothesReveal-Sheet.png-ee36b7b4bf6aea96aac462085f8f2aad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/16x32/16x32 Idle-Sheet.png"
-dest_files=["res://.godot/imported/16x32 Idle-Sheet.png-af0135beb87b6011203ff21b2c5d25b6.ctex"]
+source_file="res://assets/sprites/basicClothesReveal-Sheet.png"
+dest_files=["res://.godot/imported/basicClothesReveal-Sheet.png-ee36b7b4bf6aea96aac462085f8f2aad.ctex"]
 
 [params]
 

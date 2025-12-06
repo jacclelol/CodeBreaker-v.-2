@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dogi8j2tgofip"
-path="res://.godot/imported/16x32 Interact-Sheet.png-edd36b7718f3bbc77b3a517479917f6b.ctex"
+uid="uid://c6c3tgds2af8s"
+path="res://.godot/imported/idle.png-1800f7c06d5908763d656a0f3f46e8e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/16x32/16x32 Interact-Sheet.png"
-dest_files=["res://.godot/imported/16x32 Interact-Sheet.png-edd36b7718f3bbc77b3a517479917f6b.ctex"]
+source_file="res://assets/sprites/idle.png"
+dest_files=["res://.godot/imported/idle.png-1800f7c06d5908763d656a0f3f46e8e3.ctex"]
 
 [params]
 

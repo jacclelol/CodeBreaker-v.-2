@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgwdtj780d406"
-path="res://.godot/imported/rightwalk.png-651c4b55bb8c64e4d1a2ac65e1b52db3.ctex"
+uid="uid://dl6vgour0ufnc"
+path="res://.godot/imported/leftwalk_pyjamas.png-e178d90f23e4580fad586b34e54df401.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/rightwalk.png"
-dest_files=["res://.godot/imported/rightwalk.png-651c4b55bb8c64e4d1a2ac65e1b52db3.ctex"]
+source_file="res://assets/sprites/walk_anims/leftwalk_pyjamas.png"
+dest_files=["res://.godot/imported/leftwalk_pyjamas.png-e178d90f23e4580fad586b34e54df401.ctex"]
 
 [params]
 

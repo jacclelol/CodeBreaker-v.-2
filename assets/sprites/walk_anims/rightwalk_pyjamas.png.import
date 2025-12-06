@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyrtefsbelhas"
-path="res://.godot/imported/16x32 Walk-Sheet.png-3aa7fb396238b8027ae3afdf29aa2a59.ctex"
+uid="uid://bam38fn8b46nw"
+path="res://.godot/imported/rightwalk_pyjamas.png-cc4c07d5803b9de654c76704867c58fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/16x32/16x32 Walk-Sheet.png"
-dest_files=["res://.godot/imported/16x32 Walk-Sheet.png-3aa7fb396238b8027ae3afdf29aa2a59.ctex"]
+source_file="res://assets/sprites/walk_anims/rightwalk_pyjamas.png"
+dest_files=["res://.godot/imported/rightwalk_pyjamas.png-cc4c07d5803b9de654c76704867c58fa.ctex"]
 
 [params]
 
