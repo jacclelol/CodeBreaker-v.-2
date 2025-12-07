@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci8csn8sv5g0n"]
+
+[ext_resource type="Script" uid="uid://cx7kk3grhn0tj" path="res://pause_menu.gd" id="1_hdmo1"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_hdmo1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4862745)
+
+[node name="Resume" type="Button" parent="ColorRect"]
+process_mode = 3
+layout_mode = 0
+offset_left = 627.0
+offset_top = 252.0
+offset_right = 1074.0
+offset_bottom = 484.0
+text = "Pokračovat"
+
+[node name="End" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 630.0
+offset_top = 510.0
+offset_right = 1081.0
+offset_bottom = 764.0
+text = "Ukončit hru"
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="ColorRect/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="ColorRect/End" to="." method="_on_end_pressed"]

@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var player = $Player
-@onready var dialog = $Player/Dialog
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,8 +18,9 @@ func _on_lamp_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 		player.move_and_interact(get_global_mouse_position(), _start_change)
 
 func _start_change():
-	dialog.text = "Tak se převleču.."
-	await get_tree().create_timer(1.5).timeout
-	dialog.text = ""
-	player.change_clothes()
+	if !player.is_clothed:
+		player.show_dialog("Převleču se...", 5)
+		player.change_clothes()
+	else:
+		player.show_dialog("Už jsem převlečen...", 2)
 	

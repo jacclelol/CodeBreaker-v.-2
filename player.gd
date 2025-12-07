@@ -2,15 +2,18 @@ extends CharacterBody2D
 
 @export var speed: float = 200.0
 @onready var anim_sprite = $AnimatedSprite2D
+@onready var Dialog = $Dialog
 var destination = Vector2()
 var is_moving = false
 var last_direction_name = "down" # Pamatujeme si, kam koukal naposled
 var is_changing = false 
 var pending_action: Callable = Callable()
+var clothes = "pyjamas"
+var is_clothed = false
 
 func _ready() -> void:
 	destination = position
-	anim_sprite.play("idle_front")
+	anim_sprite.play(clothes + "_idle")
 	if not anim_sprite.animation_finished.is_connected(_on_animation_finished):
 		anim_sprite.animation_finished.connect(_on_animation_finished)
 
@@ -55,7 +58,7 @@ func stop_movement():
 	velocity = Vector2.ZERO
 	is_moving = false
 
-	anim_sprite.play("idle_front")
+	anim_sprite.play(clothes + "_idle")
 	if pending_action.is_valid():
 		pending_action.call() # "Otevři obálku a udělej to"
 		pending_action = Callable() # Zahodíme obálku, úkol splněn
@@ -66,23 +69,23 @@ func update_animation(dir: Vector2):
 		return
 	var dir_name = ""
 	
-	# Zjistíme horizontální směr (Vlevo/Vpravo)
+
 	if abs(dir.x) > abs(dir.y):
 		if dir.x > 0:
-			dir_name = "right"
+			dir_name = clothes + "_right"
 		else:
-			dir_name = "left"
+			dir_name = clothes + "_left"
 	else:
 		# Jinak jdeme nahoru nebo dolů
 		if dir.y > 0:
-			dir_name = "down"
+			dir_name = clothes + "_down"
 		else:
-			dir_name = "up"
+			dir_name = clothes + "_up"
 
 	last_direction_name = dir_name
 	
 	# Pustí animaci (např. "walk_left", "walk_up")
-	anim_sprite.play("walk_" + dir_name)
+	anim_sprite.play(dir_name)
 
 func change_clothes():
 
@@ -97,13 +100,18 @@ func change_clothes():
 
 
 func _on_animation_finished() -> void:
-	# Tato funkce se zavolá vždy, když dohraje jakákoliv animace (pokud není loopovací)
+
 	
-	# Zkontrolujeme, jestli zrovna dohrála animace převlékání
 	if anim_sprite.animation == "pyjamas_change":
 		anim_sprite.play("clothes_reveal")
 	elif anim_sprite.animation == "clothes_reveal":
 		is_changing = false
-		
-		# Vrátíme se do klidového stavu (idle)
-		anim_sprite.play("idle_front")
+		clothes = "normal"
+		is_clothed = true
+		anim_sprite.play(clothes + "_idle")
+
+func show_dialog(text, time):
+	Dialog.text = text
+	await get_tree().create_timer(time).timeout
+	Dialog.text = ""
+	
