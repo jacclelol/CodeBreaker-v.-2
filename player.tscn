@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=3 uid="uid://bf8ctexfk0mg4"]
+[gd_scene load_steps=119 format=3 uid="uid://bf8ctexfk0mg4"]
 
 [ext_resource type="Script" uid="uid://dcamub67288nr" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://57bhgpd82km8" path="res://assets/sprites/basicClothesReveal-Sheet.png" id="2_1jxqw"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dgwdtj780d406" path="res://assets/sprites/walk_anims/rightwalk.png" id="3_hqtel"]
 [ext_resource type="Texture2D" uid="uid://cgagur6p4i704" path="res://assets/sprites/walk_anims/leftwalk.png" id="3_sweqy"]
 [ext_resource type="Texture2D" uid="uid://sxrrq7lc6e08" path="res://assets/sprites/idlePyjama-Sheet.png" id="4_dw050"]
+[ext_resource type="Texture2D" uid="uid://c71nwosje2h7r" path="res://assets/sprites/topwalk.png" id="7_bwjto"]
 [ext_resource type="Texture2D" uid="uid://dcejn05lyyyt4" path="res://assets/sprites/walkdownPyjama-Sheet.png" id="8_ivps1"]
 [ext_resource type="Texture2D" uid="uid://dl6vgour0ufnc" path="res://assets/sprites/walk_anims/leftwalk_pyjamas.png" id="9_n7ghd"]
 [ext_resource type="Texture2D" uid="uid://bam38fn8b46nw" path="res://assets/sprites/walk_anims/rightwalk_pyjamas.png" id="10_nvl01"]
@@ -189,6 +190,22 @@ region = Rect2(320, 0, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_u1c27"]
 atlas = ExtResource("3_hqtel")
 region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04g4e"]
+atlas = ExtResource("7_bwjto")
+region = Rect2(0, 0, 32, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lx1qc"]
+atlas = ExtResource("7_bwjto")
+region = Rect2(32, 0, 32, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elm0x"]
+atlas = ExtResource("7_bwjto")
+region = Rect2(64, 0, 32, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7vj2"]
+atlas = ExtResource("7_bwjto")
+region = Rect2(96, 0, 32, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_efrwb"]
 atlas = ExtResource("3_1jxqw")
@@ -563,6 +580,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_04g4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lx1qc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elm0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7vj2")
+}],
+"loop": true,
+"name": &"normal_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_efrwb")
 }, {
 "duration": 1.0,
@@ -767,7 +801,7 @@ script = ExtResource("1_onrkg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2.76, 2.76)
 sprite_frames = SubResource("SpriteFrames_2hs0m")
-animation = &"pyjamas_up"
+animation = &"normal_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 16.5)
@@ -781,6 +815,7 @@ limit_right = 1920
 limit_bottom = 1080
 
 [node name="Dialog" type="Control" parent="."]
+z_index = 2
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
@@ -790,9 +825,9 @@ offset_bottom = 40.0
 [node name="Label" type="Label" parent="Dialog"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -101.0
-offset_top = -124.0
-offset_right = 101.0
+offset_left = -145.0
+offset_top = -130.0
+offset_right = 145.0
 offset_bottom = -81.5
 label_settings = SubResource("LabelSettings_dw050")
 horizontal_alignment = 1

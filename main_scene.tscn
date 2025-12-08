@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://0kjxsbr8ri00"]
+[gd_scene load_steps=17 format=3 uid="uid://0kjxsbr8ri00"]
 
 [ext_resource type="PackedScene" uid="uid://bf8ctexfk0mg4" path="res://player.tscn" id="1_0f027"]
 [ext_resource type="Script" uid="uid://tmomr4acaw5w" path="res://main_scene.gd" id="1_gyfs4"]
 [ext_resource type="Texture2D" uid="uid://b87d0t17pe0pn" path="res://assets/sprites/lamp.png" id="2_2c62f"]
+[ext_resource type="Texture2D" uid="uid://noer0enkqlj2" path="res://assets/sprites/bed-Sheet.png" id="4_d5x1h"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gyfs4"]
 normal = Vector2(1, 0)
@@ -15,11 +16,68 @@ normal = Vector2(1, 0)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hq1ik"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mm7a"]
+atlas = ExtResource("4_d5x1h")
+region = Rect2(0, 0, 150, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq1ik"]
+atlas = ExtResource("4_d5x1h")
+region = Rect2(150, 0, 150, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfk4m"]
+atlas = ExtResource("4_d5x1h")
+region = Rect2(300, 0, 150, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66tet"]
+atlas = ExtResource("4_d5x1h")
+region = Rect2(450, 0, 150, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ycvg"]
+atlas = ExtResource("4_d5x1h")
+region = Rect2(600, 0, 150, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wr18j"]
+atlas = ExtResource("4_d5x1h")
+region = Rect2(750, 0, 150, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwutr"]
+atlas = ExtResource("4_d5x1h")
+region = Rect2(900, 0, 150, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_671wp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mm7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hq1ik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfk4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66tet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ycvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wr18j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwutr")
+}],
+"loop": true,
+"name": &"postel",
+"speed": 1.0
+}]
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_gyfs4")
 
 [node name="Player" parent="." instance=ExtResource("1_0f027")]
-position = Vector2(633, 366)
+position = Vector2(211, 600)
 
 [node name="Lamp" type="StaticBody2D" parent="."]
 texture_filter = 1
@@ -50,5 +108,17 @@ shape = SubResource("WorldBoundaryShape2D_8mm7a")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1920, 1080)
 shape = SubResource("WorldBoundaryShape2D_hq1ik")
+
+[node name="Postel" type="Area2D" parent="."]
+position = Vector2(245, 744)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Postel"]
+polygon = PackedVector2Array(30, 37, 31, 34, 44, 29, 59, 21, 64, 22, 65, 4, 55, -1, -21, 0, -34, -9, -34, -30, -39, -30, -60, -24, -61, 40, 29, 40)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Postel"]
+scale = Vector2(3.615, 3.615)
+sprite_frames = SubResource("SpriteFrames_671wp")
+animation = &"postel"
+autoplay = "postel"
 
 [connection signal="input_event" from="Lamp" to="." method="_on_lamp_input_event"]
