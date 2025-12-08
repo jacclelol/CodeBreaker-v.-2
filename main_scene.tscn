@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bf8ctexfk0mg4" path="res://player.tscn" id="1_0f027"]
 [ext_resource type="Script" uid="uid://tmomr4acaw5w" path="res://main_scene.gd" id="1_gyfs4"]
-[ext_resource type="Texture2D" uid="uid://b87d0t17pe0pn" path="res://assets/sprites/lamp.png" id="2_2c62f"]
-[ext_resource type="Texture2D" uid="uid://noer0enkqlj2" path="res://assets/sprites/bed-Sheet.png" id="4_d5x1h"]
+[ext_resource type="Texture2D" uid="uid://b87d0t17pe0pn" path="res://assets/sprites/objects/lamp.png" id="2_2c62f"]
+[ext_resource type="Texture2D" uid="uid://noer0enkqlj2" path="res://assets/sprites/objects/bed-Sheet.png" id="4_d5x1h"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gyfs4"]
 normal = Vector2(1, 0)
@@ -113,12 +113,14 @@ shape = SubResource("WorldBoundaryShape2D_hq1ik")
 position = Vector2(245, 744)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Postel"]
-polygon = PackedVector2Array(30, 37, 31, 34, 44, 29, 59, 21, 64, 22, 65, 4, 55, -1, -21, 0, -34, -9, -34, -30, -39, -30, -60, -24, -61, 40, 29, 40)
+polygon = PackedVector2Array(-175, 141, 120, 141, 253, 74, 253, -8, 99, -7, 66, -8, 3, -10, -32, -6, -59, -8, -108, -37, -105, -60, -108, -108, -200, -79, -198, 142)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Postel"]
+position = Vector2(17, -4)
 scale = Vector2(3.615, 3.615)
 sprite_frames = SubResource("SpriteFrames_671wp")
 animation = &"postel"
 autoplay = "postel"
 
 [connection signal="input_event" from="Lamp" to="." method="_on_lamp_input_event"]
+[connection signal="input_event" from="Postel" to="." method="_on_postel_input_event"]

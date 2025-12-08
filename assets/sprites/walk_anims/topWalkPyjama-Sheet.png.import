@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm3rty73c5oin"
-path="res://.godot/imported/inPyjamaChangeClothesAnim-Sheet.png-bdc8893a8ca979129eb7ff4a4a794691.ctex"
+uid="uid://ceydnhe0bdtij"
+path="res://.godot/imported/topWalkPyjama-Sheet.png-4f13c33e6388d104ead91c8f19f91025.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/inPyjamaChangeClothesAnim-Sheet.png"
-dest_files=["res://.godot/imported/inPyjamaChangeClothesAnim-Sheet.png-bdc8893a8ca979129eb7ff4a4a794691.ctex"]
+source_file="res://assets/sprites/walk_anims/topWalkPyjama-Sheet.png"
+dest_files=["res://.godot/imported/topWalkPyjama-Sheet.png-4f13c33e6388d104ead91c8f19f91025.ctex"]
 
 [params]
 

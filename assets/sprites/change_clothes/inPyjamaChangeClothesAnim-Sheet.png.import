@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://57bhgpd82km8"
-path="res://.godot/imported/basicClothesReveal-Sheet.png-ee36b7b4bf6aea96aac462085f8f2aad.ctex"
+uid="uid://cm3rty73c5oin"
+path="res://.godot/imported/inPyjamaChangeClothesAnim-Sheet.png-8dfcaf65ecc44dd8e174ff28f24ce4f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/basicClothesReveal-Sheet.png"
-dest_files=["res://.godot/imported/basicClothesReveal-Sheet.png-ee36b7b4bf6aea96aac462085f8f2aad.ctex"]
+source_file="res://assets/sprites/change_clothes/inPyjamaChangeClothesAnim-Sheet.png"
+dest_files=["res://.godot/imported/inPyjamaChangeClothesAnim-Sheet.png-8dfcaf65ecc44dd8e174ff28f24ce4f0.ctex"]
 
 [params]
 

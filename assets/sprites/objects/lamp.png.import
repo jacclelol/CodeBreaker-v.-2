@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c71nwosje2h7r"
-path="res://.godot/imported/topwalk.png-57ae9293b3b9a884287812482a93748d.ctex"
+uid="uid://b87d0t17pe0pn"
+path="res://.godot/imported/lamp.png-c0ec2eb3f46b49462671549fc88288e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/topwalk.png"
-dest_files=["res://.godot/imported/topwalk.png-57ae9293b3b9a884287812482a93748d.ctex"]
+source_file="res://assets/sprites/objects/lamp.png"
+dest_files=["res://.godot/imported/lamp.png-c0ec2eb3f46b49462671549fc88288e1.ctex"]
 
 [params]
 

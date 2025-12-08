@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcejn05lyyyt4"
-path="res://.godot/imported/walkdownPyjama-Sheet.png-c362be8dc19a25d23f756134f21388e2.ctex"
+uid="uid://c71nwosje2h7r"
+path="res://.godot/imported/topwalk.png-6072d56a7199e9685405a83fe1046a17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/walkdownPyjama-Sheet.png"
-dest_files=["res://.godot/imported/walkdownPyjama-Sheet.png-c362be8dc19a25d23f756134f21388e2.ctex"]
+source_file="res://assets/sprites/walk_anims/topwalk.png"
+dest_files=["res://.godot/imported/topwalk.png-6072d56a7199e9685405a83fe1046a17.ctex"]
 
 [params]
 

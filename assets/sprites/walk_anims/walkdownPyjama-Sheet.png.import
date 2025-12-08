@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://noer0enkqlj2"
-path="res://.godot/imported/bed-Sheet.png-560381b4aee647c7fc6c41183e647d1a.ctex"
+uid="uid://dcejn05lyyyt4"
+path="res://.godot/imported/walkdownPyjama-Sheet.png-b9fab7fd1d8214fb15b14cf6f65f1070.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/bed-Sheet.png"
-dest_files=["res://.godot/imported/bed-Sheet.png-560381b4aee647c7fc6c41183e647d1a.ctex"]
+source_file="res://assets/sprites/walk_anims/walkdownPyjama-Sheet.png"
+dest_files=["res://.godot/imported/walkdownPyjama-Sheet.png-b9fab7fd1d8214fb15b14cf6f65f1070.ctex"]
 
 [params]
 

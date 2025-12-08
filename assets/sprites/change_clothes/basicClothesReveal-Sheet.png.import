@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b87d0t17pe0pn"
-path="res://.godot/imported/lamp.png-e161f1e088c60fb8266ad7f1cd5aaba1.ctex"
+uid="uid://57bhgpd82km8"
+path="res://.godot/imported/basicClothesReveal-Sheet.png-02d1482c5b74c93ac2e7b0541c7535aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/lamp.png"
-dest_files=["res://.godot/imported/lamp.png-e161f1e088c60fb8266ad7f1cd5aaba1.ctex"]
+source_file="res://assets/sprites/change_clothes/basicClothesReveal-Sheet.png"
+dest_files=["res://.godot/imported/basicClothesReveal-Sheet.png-02d1482c5b74c93ac2e7b0541c7535aa.ctex"]
 
 [params]
 

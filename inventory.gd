@@ -23,35 +23,40 @@ func add_to_inv(item: String):
 	else:
 		print("neni volny slot")
 
-var slot_path
+var base_path = "Control/ColorRect/slot"
 var slot_node
 
 func update_visuals(item: String, free_slot: int):
-	slot_path = "Control/ColorRect/slot" + str(free_slot)
+	var slot_path = base_path + str(free_slot)
 	slot_node = get_node(slot_path)
 	slot_node.texture = load("res://icon.svg")
 
-var selected
+var selected = ""
+func selection(selected_index: int):
+	for n in 8:
+		var slot_path = base_path + str(n) + "/ColorRect"
+		slot_node = get_node(slot_path)
+		if selected_index == n and items[selected_index] != null:
+			slot_node.color = Color(0.44, 0.774, 0.4, 1.0)
+			selected = items[selected_index]
+			print(selected)
+		else:
+			slot_node.color = Color.GRAY
+		
+var selected_index = -1
 func _on_color_rect_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
-		for i in get_child_count():
-			var slot = get_child(i)
-			
-			# Je to opravdu TextureRect? (pro jistotu)
+		for i in range($Control/ColorRect.get_child_count()):
+			var slot = $Control/ColorRect.get_child(i)
+
 			if slot is TextureRect:
-				
-				# MAGIE:
-				# get_global_rect() vrátí obdélník slotu na obrazovce.
-				# has_point() zkontroluje, jestli je myš uvnitř.
 				if slot.get_global_rect().has_point(event.global_position):
-					
-					print("Klikl jsi na TextureRect (slot) č.: ", i)
-					selected.emit(i)
+					print("Klikl jsi na slot s indexem: ", i)
+					selected_index = i
+					selection(selected_index)
 					return
-		
 
 
-var inventory = [null, null, null, null]
 var current_scene_path: String
 
 func _process(delta: float) -> void:
@@ -72,7 +77,7 @@ func _input(event):
 
 func toggle_inv():
 	visible = not visible
-	
+	selection(-1)
 	get_tree().paused = visible
 
 
