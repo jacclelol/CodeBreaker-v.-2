@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dl6vgour0ufnc" path="res://assets/sprites/walk_anims/leftwalk_pyjamas.png" id="9_n7ghd"]
 [ext_resource type="Texture2D" uid="uid://bam38fn8b46nw" path="res://assets/sprites/walk_anims/rightwalk_pyjamas.png" id="10_nvl01"]
 [ext_resource type="Texture2D" uid="uid://ceydnhe0bdtij" path="res://assets/sprites/topWalkPyjama-Sheet.png" id="12_urp6f"]
+[ext_resource type="FontFile" uid="uid://dk870uc0jo24d" path="res://assets/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="13_urp6f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ajfva"]
 atlas = ExtResource("2_1jxqw")
@@ -751,24 +752,20 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4flbx"]
-radius = 14.25
-height = 73.5
-
-[sub_resource type="SystemFont" id="SystemFont_1jxqw"]
-subpixel_positioning = 0
+radius = 18.75
+height = 101.5
 
 [sub_resource type="LabelSettings" id="LabelSettings_dw050"]
-font = SubResource("SystemFont_1jxqw")
-font_size = 13
+font = ExtResource("13_urp6f")
+font_size = 25
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
-scale = Vector2(1.5, 1.5)
 script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
+scale = Vector2(2.76, 2.76)
 sprite_frames = SubResource("SpriteFrames_2hs0m")
 animation = &"pyjamas_up"
 
@@ -783,11 +780,20 @@ limit_top = 0
 limit_right = 1920
 limit_bottom = 1080
 
-[node name="Dialog" type="Label" parent="."]
-offset_left = -98.666664
-offset_top = -103.333336
-offset_right = 103.333336
-offset_bottom = -60.833336
+[node name="Dialog" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Dialog"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -101.0
+offset_top = -124.0
+offset_right = 101.0
+offset_bottom = -81.5
 label_settings = SubResource("LabelSettings_dw050")
 horizontal_alignment = 1
 vertical_alignment = 2

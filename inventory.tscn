@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://jcju2wsa0r5x"]
+
+[ext_resource type="Script" uid="uid://bv4ff5icywgbg" path="res://inventory.gd" id="1_pohso"]
+
+[node name="Inventory" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_pohso")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 593.0
+offset_top = 307.0
+offset_right = 1256.0
+offset_bottom = 754.0

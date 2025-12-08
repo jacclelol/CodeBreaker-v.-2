@@ -1,13 +1,17 @@
 extends CanvasLayer
 
-var but
+
 
 func _on_ready() -> void:
 	visible = false # Po startu menu schováme
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"): # Obvykle ESC
-		toggle_pause()
+		if Inventory.visible:
+			Inventory.visible = false
+			toggle_pause()
+		else:
+			toggle_pause()
 
 func toggle_pause():
 	# Přepneme viditelnost

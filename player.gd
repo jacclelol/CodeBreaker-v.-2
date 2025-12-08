@@ -2,10 +2,9 @@ extends CharacterBody2D
 
 @export var speed: float = 200.0
 @onready var anim_sprite = $AnimatedSprite2D
-@onready var Dialog = $Dialog
+@onready var Dialog = $Dialog/Label
 var destination = Vector2()
 var is_moving = false
-var last_direction_name = "down" # Pamatujeme si, kam koukal naposled
 var is_changing = false 
 var pending_action: Callable = Callable()
 var clothes = "pyjamas"
@@ -60,8 +59,8 @@ func stop_movement():
 
 	anim_sprite.play(clothes + "_idle")
 	if pending_action.is_valid():
-		pending_action.call() # "Otevři obálku a udělej to"
-		pending_action = Callable() # Zahodíme obálku, úkol splněn
+		pending_action.call()
+		pending_action = Callable() 
 
 
 func update_animation(dir: Vector2):
@@ -82,9 +81,6 @@ func update_animation(dir: Vector2):
 		else:
 			dir_name = clothes + "_up"
 
-	last_direction_name = dir_name
-	
-	# Pustí animaci (např. "walk_left", "walk_up")
 	anim_sprite.play(dir_name)
 
 func change_clothes():
