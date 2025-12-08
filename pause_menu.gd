@@ -9,6 +9,7 @@ func _on_ready() -> void:
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"): # Obvykle ESC
+		current_scene = get_tree().current_scene.get_path()
 		if Inventory.visible and current_scene != "/root/StartMenu":
 			Inventory.visible = false
 			toggle_pause()

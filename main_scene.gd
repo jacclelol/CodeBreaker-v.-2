@@ -19,8 +19,10 @@ func _on_lamp_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 
 func _start_change():
 	if !player.is_clothed:
+		Inventory.add_to_inv("res://icon.svg")
 		player.show_dialog("Převleču se...", 5)
 		player.change_clothes()
 	else:
+		Inventory.add_to_inv("res://icon.svg")
 		player.show_dialog("Už jsem převlečen...", 2)
 	
