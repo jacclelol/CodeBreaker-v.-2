@@ -1,9 +1,40 @@
-[gd_scene load_steps=17 format=3 uid="uid://0kjxsbr8ri00"]
+[gd_scene load_steps=23 format=3 uid="uid://0kjxsbr8ri00"]
 
 [ext_resource type="PackedScene" uid="uid://bf8ctexfk0mg4" path="res://player.tscn" id="1_0f027"]
 [ext_resource type="Script" uid="uid://tmomr4acaw5w" path="res://main_scene.gd" id="1_gyfs4"]
-[ext_resource type="Texture2D" uid="uid://b87d0t17pe0pn" path="res://assets/sprites/objects/lamp.png" id="2_2c62f"]
+[ext_resource type="Texture2D" uid="uid://ph85pn0m5hgn" path="res://assets/sprites/pokojik.png" id="2_8mm7a"]
+[ext_resource type="Texture2D" uid="uid://xuxbk2n0xehj" path="res://assets/sprites/bookshelf-Sheet.png" id="4_8mm7a"]
 [ext_resource type="Texture2D" uid="uid://noer0enkqlj2" path="res://assets/sprites/objects/bed-Sheet.png" id="4_d5x1h"]
+[ext_resource type="Texture2D" uid="uid://b2v7hsfrgwiie" path="res://assets/sprites/objects/věšák.png" id="6_hq1ik"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_671wp"]
+atlas = ExtResource("4_8mm7a")
+region = Rect2(0, 0, 50, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo76n"]
+atlas = ExtResource("4_8mm7a")
+region = Rect2(50, 0, 50, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42l1d"]
+atlas = ExtResource("4_8mm7a")
+region = Rect2(100, 0, 50, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2jcla"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_671wp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo76n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42l1d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gyfs4"]
 normal = Vector2(1, 0)
@@ -15,6 +46,8 @@ normal = Vector2(0, 1)
 normal = Vector2(1, 0)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hq1ik"]
+normal = Vector2(-0.01716414, -0.99985266)
+distance = 39.801968
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8mm7a"]
 atlas = ExtResource("4_d5x1h")
@@ -76,51 +109,91 @@ animations = [{
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_gyfs4")
 
-[node name="Player" parent="." instance=ExtResource("1_0f027")]
-position = Vector2(211, 600)
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(962.75006, 533)
+scale = Vector2(1.4244791, 1.4244791)
+texture = ExtResource("2_8mm7a")
 
-[node name="Lamp" type="StaticBody2D" parent="."]
+[node name="Player" parent="." instance=ExtResource("1_0f027")]
+z_index = 1
+position = Vector2(1392, 749)
+scale = Vector2(2.67, 2.67)
+
+[node name="Bookshelf" type="StaticBody2D" parent="."]
 texture_filter = 1
 position = Vector2(323, 307)
 input_pickable = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Lamp"]
-position = Vector2(-5, 114)
-scale = Vector2(0.065, 0.065)
-texture = ExtResource("2_2c62f")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bookshelf"]
+position = Vector2(487, 11.999988)
+scale = Vector2(5.8124995, 5.8124995)
+sprite_frames = SubResource("SpriteFrames_2jcla")
+autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Lamp"]
-position = Vector2(-3, 113.5)
-polygon = PackedVector2Array(-11, 3.5, -11, -71.5, -8, -71.5, -8, -77.5, -5, -77.5, -5, -79.5, -2, -79.5, -2, -82.5, 0, -82.5, 0.21561813, -82.5, 1, -88.5, 3, -88.5, 3, -91.5, 39, -91.5, 39, -88.5, 41, -88.5, 41, -85.5, 44, -85.5, 44, -73.5, 41, -73.5, 41, -70.5, 9, -70.5, 9, -73.5, 4, -73.5, 4, -70.5, 1, -70.5, 1, 4.934799, 1, 37.5, 4, 37.5, 4, 65.5, 7, 66.5, 7, 80.5, 10, 80.5, 10, 83.5, 13, 83.5, 13, 92.5, -23, 92.5, -23, 80.5, -20, 80.5, -20, 77.5, -17, 77.5, -17, 66.5, -14, 65.5, -14, 37.5, -11, 37.5)
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Bookshelf"]
+position = Vector2(358, -0.08797455)
+scale = Vector2(1, 0.8169406)
+polygon = PackedVector2Array(1, 9, 0, 334.2813, 270, 336.7295, 266, -324.27332, 3, -316.92883)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="borders" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders"]
+position = Vector2(1922, 1)
+rotation = -3.138214
 shape = SubResource("WorldBoundaryShape2D_gyfs4")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders"]
 shape = SubResource("WorldBoundaryShape2D_d5x1h")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders"]
 position = Vector2(0, 1080)
 shape = SubResource("WorldBoundaryShape2D_8mm7a")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1920, 1080)
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders"]
+position = Vector2(1919, 1105)
 shape = SubResource("WorldBoundaryShape2D_hq1ik")
 
-[node name="Postel" type="Area2D" parent="."]
-position = Vector2(245, 744)
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="borders"]
+position = Vector2(452, 631)
+rotation = 2.6202505
+shape = SubResource("WorldBoundaryShape2D_hq1ik")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="borders"]
+position = Vector2(1093, 542)
+rotation = 3.154244
+shape = SubResource("WorldBoundaryShape2D_hq1ik")
+
+[node name="Postel" type="StaticBody2D" parent="."]
+position = Vector2(374, 825)
+scale = Vector2(0.88, 0.88)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Postel"]
-polygon = PackedVector2Array(-175, 141, 120, 141, 253, 74, 253, -8, 99, -7, 66, -8, 3, -10, -32, -6, -59, -8, -108, -37, -105, -60, -108, -108, -200, -79, -198, 142)
+scale = Vector2(1.9847858, 1.9847858)
+polygon = PackedVector2Array(-175, 141, 251.41252, 148.63065, 252.924, 75.071075, 253.93169, 26.703125, 84.14006, 29.726135, -5.54216, 31.23761, -73.055756, 14.611145, -81.117065, 2.0153198, -110.33937, -9.572815, -108, -37, -105, -60, -108, -108, -200, -79, -198, 142)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Postel"]
+z_index = 2
 position = Vector2(17, -4)
-scale = Vector2(3.615, 3.615)
+scale = Vector2(7.1750007, 7.1750007)
 sprite_frames = SubResource("SpriteFrames_671wp")
 animation = &"postel"
 autoplay = "postel"
 
-[connection signal="input_event" from="Lamp" to="." method="_on_lamp_input_event"]
+[node name="Vesak" type="StaticBody2D" parent="."]
+texture_filter = 1
+position = Vector2(560, 370)
+input_pickable = true
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="Vesak"]
+position = Vector2(487, 11.999988)
+scale = Vector2(5.8124995, 5.8124995)
+texture = ExtResource("6_hq1ik")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Vesak"]
+position = Vector2(358, -0.08797455)
+scale = Vector2(1, 0.8169406)
+polygon = PackedVector2Array(35, 22.141113, 37, 266.95697, 196, 268.18103, 216, -264.29343, 36, -254.5008)
+
+[connection signal="input_event" from="Bookshelf" to="." method="_on_lamp_input_event"]
 [connection signal="input_event" from="Postel" to="." method="_on_postel_input_event"]
+[connection signal="input_event" from="Vesak" to="." method="_on_vesak_input_event"]

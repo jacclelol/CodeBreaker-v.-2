@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var player = $Player
-
+var arrow = load("res://icon.svg")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -14,8 +14,7 @@ func _process(delta: float) -> void:
 
 func _on_lamp_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("left_click"):
-
-		player.move_and_interact(get_global_mouse_position(), _start_change)
+		player.move_and_interact(get_global_mouse_position(), func(): await player.show_dialog("Moje polička...", 2))
 
 func _start_change():
 	if !player.is_clothed:
@@ -27,5 +26,11 @@ func _start_change():
 
 
 func _on_postel_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	Input.set_custom_mouse_cursor(arrow)
 	if event.is_action_pressed("left_click"):
-		Inventory.add_to_inv("res://icon.svg")
+		Inventory.add_to_inv("figurka")
+
+
+func _on_vesak_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event.is_action_pressed("left_click"):
+		player.move_and_interact(get_global_mouse_position(), _start_change)

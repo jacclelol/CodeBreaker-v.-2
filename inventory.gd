@@ -1,11 +1,12 @@
 extends CanvasLayer
 
-var items = [null, null, null, null, null, null, null, null]
-const slots_count = 8
+var items = [null, null, null, null, null, null, null, null, null, null]
 var free_slot: int
+var base_path = "Control/TextureRect/slot"
+var slot_node
 
 func check_slot():
-	for i in 8:
+	for i in items.size():
 		if items[i] == null:
 			print("volny slot")
 			free_slot = i
@@ -23,31 +24,31 @@ func add_to_inv(item: String):
 	else:
 		print("neni volny slot")
 
-var base_path = "Control/ColorRect/slot"
-var slot_node
-
 func update_visuals(item: String, free_slot: int):
 	var slot_path = base_path + str(free_slot)
 	slot_node = get_node(slot_path)
-	slot_node.texture = load("res://icon.svg")
+	slot_node.texture = load(GlobalItems.seznam[item])
+
+
+
 
 var selected = ""
 func selection(selected_index: int):
-	for n in 8:
-		var slot_path = base_path + str(n) + "/ColorRect"
+	for n in items.size():
+		var slot_path = base_path + str(n)
 		slot_node = get_node(slot_path)
 		if selected_index == n and items[selected_index] != null:
-			slot_node.color = Color(0.44, 0.774, 0.4, 1.0)
+			slot_node.modulate = Color(0.75, 0.732, 0.725, 1.0)
 			selected = items[selected_index]
 			print(selected)
 		else:
-			slot_node.color = Color.GRAY
+			slot_node.modulate = Color.WHITE
 		
 var selected_index = -1
 func _on_color_rect_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
-		for i in range($Control/ColorRect.get_child_count()):
-			var slot = $Control/ColorRect.get_child(i)
+		for i in range($Control/TextureRect.get_child_count()):
+			var slot = $Control/TextureRect.get_child(i)
 
 			if slot is TextureRect:
 				if slot.get_global_rect().has_point(event.global_position):

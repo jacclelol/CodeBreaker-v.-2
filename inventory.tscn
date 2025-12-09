@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://jcju2wsa0r5x"]
+[gd_scene load_steps=3 format=3 uid="uid://jcju2wsa0r5x"]
 
 [ext_resource type="Script" uid="uid://bv4ff5icywgbg" path="res://inventory.gd" id="1_pohso"]
+[ext_resource type="Texture2D" uid="uid://c0pjf6vqavhur" path="res://assets/sprites/inventory.png" id="2_psafj"]
 
 [node name="Inventory" type="CanvasLayer"]
 process_mode = 3
@@ -12,157 +13,102 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="Control"]
 layout_mode = 0
-offset_left = 593.0
-offset_top = 307.0
-offset_right = 1256.0
-offset_bottom = 754.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_psafj")
 
-[node name="slot0" type="TextureRect" parent="Control/ColorRect"]
+[node name="slot0" type="TextureRect" parent="Control/TextureRect"]
 z_index = 1
 layout_mode = 0
-offset_left = 41.0
-offset_top = 39.0
-offset_right = 41.0
-offset_bottom = 39.0
+offset_left = 626.0
+offset_top = 426.0
+offset_right = 703.0
+offset_bottom = 503.0
+expand_mode = 1
 
-[node name="ColorRect" type="ColorRect" parent="Control/ColorRect/slot0"]
-z_index = -1
-layout_mode = 0
-offset_left = -15.0
-offset_top = -16.0
-offset_right = 136.0
-offset_bottom = 134.0
-mouse_filter = 1
-color = Color(0.47658914, 0.47136146, 0.48484182, 1)
-
-[node name="slot1" type="TextureRect" parent="Control/ColorRect"]
+[node name="slot1" type="TextureRect" parent="Control/TextureRect"]
 z_index = 1
 layout_mode = 0
-offset_left = 188.0
-offset_top = 31.0
-offset_right = 316.0
-offset_bottom = 159.0
+offset_left = 949.0
+offset_top = 429.0
+offset_right = 1026.0
+offset_bottom = 506.0
+expand_mode = 1
 
-[node name="ColorRect" type="ColorRect" parent="Control/ColorRect/slot1"]
-z_index = -1
-layout_mode = 0
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 143.0
-offset_bottom = 142.0
-mouse_filter = 1
-color = Color(0.47658914, 0.47136146, 0.48484182, 1)
-
-[node name="slot2" type="TextureRect" parent="Control/ColorRect"]
+[node name="slot2" type="TextureRect" parent="Control/TextureRect"]
 z_index = 1
 layout_mode = 0
-offset_left = 352.0
-offset_top = 42.0
-offset_right = 352.0
-offset_bottom = 42.0
+offset_left = 1171.0
+offset_top = 438.0
+offset_right = 1248.0
+offset_bottom = 515.0
+expand_mode = 1
 
-[node name="ColorRect" type="ColorRect" parent="Control/ColorRect/slot2"]
-z_index = -1
-layout_mode = 0
-offset_left = -19.0
-offset_top = -19.0
-offset_right = 132.0
-offset_bottom = 131.0
-mouse_filter = 1
-color = Color(0.47658914, 0.47136146, 0.48484182, 1)
-
-[node name="slot3" type="TextureRect" parent="Control/ColorRect"]
+[node name="slot3" type="TextureRect" parent="Control/TextureRect"]
 z_index = 1
 layout_mode = 0
-offset_left = 508.0
-offset_top = 42.0
-offset_right = 508.0
-offset_bottom = 42.0
+offset_left = 589.0
+offset_top = 613.0
+offset_right = 666.0
+offset_bottom = 690.0
+expand_mode = 1
 
-[node name="ColorRect" type="ColorRect" parent="Control/ColorRect/slot3"]
-z_index = -1
-layout_mode = 0
-offset_left = -15.0
-offset_top = -16.0
-offset_right = 136.0
-offset_bottom = 134.0
-mouse_filter = 1
-color = Color(0.47658914, 0.47136146, 0.48484182, 1)
-
-[node name="slot4" type="TextureRect" parent="Control/ColorRect"]
+[node name="slot4" type="TextureRect" parent="Control/TextureRect"]
 z_index = 1
 layout_mode = 0
-offset_left = 55.0
-offset_top = 243.0
-offset_right = 55.0
-offset_bottom = 243.0
+offset_left = 784.0
+offset_top = 570.0
+offset_right = 861.0
+offset_bottom = 647.0
+expand_mode = 1
 
-[node name="ColorRect" type="ColorRect" parent="Control/ColorRect/slot4"]
-z_index = -1
-layout_mode = 0
-offset_left = -15.0
-offset_top = -16.0
-offset_right = 136.0
-offset_bottom = 134.0
-mouse_filter = 1
-color = Color(0.47658914, 0.47136146, 0.48484182, 1)
-
-[node name="slot5" type="TextureRect" parent="Control/ColorRect"]
+[node name="slot5" type="TextureRect" parent="Control/TextureRect"]
 z_index = 1
 layout_mode = 0
-offset_left = 209.0
-offset_top = 241.0
-offset_right = 209.0
-offset_bottom = 241.0
+offset_left = 1023.0
+offset_top = 584.0
+offset_right = 1100.0
+offset_bottom = 661.0
+expand_mode = 1
 
-[node name="ColorRect" type="ColorRect" parent="Control/ColorRect/slot5"]
-z_index = -1
-layout_mode = 0
-offset_left = -15.0
-offset_top = -16.0
-offset_right = 136.0
-offset_bottom = 134.0
-mouse_filter = 1
-color = Color(0.47658914, 0.47136146, 0.48484182, 1)
-
-[node name="slot6" type="TextureRect" parent="Control/ColorRect"]
+[node name="slot6" type="TextureRect" parent="Control/TextureRect"]
 z_index = 1
 layout_mode = 0
-offset_left = 364.0
-offset_top = 249.0
-offset_right = 364.0
-offset_bottom = 249.0
+offset_left = 1253.0
+offset_top = 581.0
+offset_right = 1330.0
+offset_bottom = 658.0
+expand_mode = 1
 
-[node name="ColorRect" type="ColorRect" parent="Control/ColorRect/slot6"]
-z_index = -1
-layout_mode = 0
-offset_left = -15.0
-offset_top = -16.0
-offset_right = 136.0
-offset_bottom = 134.0
-mouse_filter = 1
-color = Color(0.47658914, 0.47136146, 0.48484182, 1)
-
-[node name="slot7" type="TextureRect" parent="Control/ColorRect"]
+[node name="slot7" type="TextureRect" parent="Control/TextureRect"]
 z_index = 1
 layout_mode = 0
-offset_left = 520.0
-offset_top = 249.0
-offset_right = 520.0
-offset_bottom = 249.0
+offset_left = 670.0
+offset_top = 780.0
+offset_right = 747.0
+offset_bottom = 857.0
+expand_mode = 1
 
-[node name="ColorRect" type="ColorRect" parent="Control/ColorRect/slot7"]
-z_index = -1
+[node name="slot8" type="TextureRect" parent="Control/TextureRect"]
+z_index = 1
 layout_mode = 0
-offset_left = -15.0
-offset_top = -16.0
-offset_right = 136.0
-offset_bottom = 134.0
-mouse_filter = 1
-color = Color(0.47658914, 0.47136146, 0.48484182, 1)
+offset_left = 852.0
+offset_top = 728.0
+offset_right = 929.0
+offset_bottom = 805.0
+expand_mode = 1
+
+[node name="slot9" type="TextureRect" parent="Control/TextureRect"]
+z_index = 1
+layout_mode = 0
+offset_left = 1113.0
+offset_top = 752.0
+offset_right = 1190.0
+offset_bottom = 829.0
+expand_mode = 1
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="ready" from="." to="." method="_ready"]
-[connection signal="gui_input" from="Control/ColorRect" to="." method="_on_color_rect_gui_input"]
+[connection signal="gui_input" from="Control/TextureRect" to="." method="_on_color_rect_gui_input"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6c3tgds2af8s"
-path="res://.godot/imported/idle.png-1800f7c06d5908763d656a0f3f46e8e3.ctex"
+uid="uid://dao26ayxcqllk"
+path="res://.godot/imported/idlePyjama-Sheet.png-5ec4b811644f925c69e96c0f3b4c6807.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/idle.png"
-dest_files=["res://.godot/imported/idle.png-1800f7c06d5908763d656a0f3f46e8e3.ctex"]
+source_file="res://assets/sprites/walk_anims/idlePyjama-Sheet.png"
+dest_files=["res://.godot/imported/idlePyjama-Sheet.png-5ec4b811644f925c69e96c0f3b4c6807.ctex"]
 
 [params]
 
