@@ -9,6 +9,7 @@ var is_changing = false
 var pending_action: Callable = Callable()
 var clothes = "pyjamas"
 var is_clothed = false
+var interaction_distance: float = 60.0
 
 func _ready() -> void:
 	destination = position
@@ -26,8 +27,6 @@ func _unhandled_input(event):
 
 func move_and_interact(target_pos: Vector2, action_to_do: Callable):
 	if is_changing: return
-	
-	# 1. Nastavíme pohyb
 	destination = target_pos
 	is_moving = true
 	
@@ -39,7 +38,8 @@ func _physics_process(_delta):
 	if is_changing:
 		return
 	if is_moving:
-		if position.distance_to(destination) > 5:
+		var distance = position.distance_to(destination)
+		if distance > 5:
 			var direction = position.direction_to(destination)
 			velocity = direction * speed
 			move_and_slide()
@@ -47,20 +47,20 @@ func _physics_process(_delta):
 			
 			# Kontrola kolize se zdí (viz předchozí dotaz)
 			if get_slide_collision_count() > 0 and velocity.length() < 10:
-				stop_movement()
+				stop_movement(true)
 		else:
-			stop_movement()
+			stop_movement(false)
 			
-func stop_movement():
+func stop_movement(success: bool = false):
 	if is_changing:
 		return
 	velocity = Vector2.ZERO
 	is_moving = false
 
 	anim_sprite.play(clothes + "_idle")
-	if pending_action.is_valid():
+	if success and pending_action.is_valid():
 		pending_action.call()
-		pending_action = Callable() 
+	pending_action = Callable() 
 
 
 func update_animation(dir: Vector2):
@@ -96,8 +96,6 @@ func change_clothes():
 
 
 func _on_animation_finished() -> void:
-
-	
 	if anim_sprite.animation == "pyjamas_change":
 		anim_sprite.play("clothes_reveal")
 	elif anim_sprite.animation == "clothes_reveal":

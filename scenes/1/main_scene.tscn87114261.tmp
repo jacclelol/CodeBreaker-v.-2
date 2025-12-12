@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://0kjxsbr8ri00"]
 
-[ext_resource type="Script" uid="uid://tmomr4acaw5w" path="res://scenes/1/main_scene.gd" id="1_71ul0"]
+[ext_resource type="Script" uid="uid://4r4luume5syx" path="res://door.gd" id="1_71ul0"]
 [ext_resource type="Texture2D" uid="uid://ph85pn0m5hgn" path="res://assets/sprites/backgrounds/pokojik.png" id="2_71ul0"]
 [ext_resource type="PackedScene" uid="uid://bf8ctexfk0mg4" path="res://player/player.tscn" id="3_ln1k6"]
 [ext_resource type="Texture2D" uid="uid://xuxbk2n0xehj" path="res://assets/sprites/objects/bookshelf-Sheet.png" id="4_dfefq"]
@@ -117,7 +117,7 @@ texture = ExtResource("2_71ul0")
 
 [node name="Player" parent="." instance=ExtResource("3_ln1k6")]
 z_index = 1
-position = Vector2(1292.0001, 732.00006)
+position = Vector2(1392, 749)
 scale = Vector2(2.67, 2.67)
 
 [node name="Bookshelf" type="StaticBody2D" parent="."]
@@ -200,6 +200,6 @@ position = Vector2(1626.0001, 210.00002)
 scale = Vector2(2.8799987, 4.3199997)
 target_scene_path = "uid://wmggbdwbqa28"
 
-[connection signal="input_event" from="Bookshelf" to="." method="_on_bookshelf_input_event"]
+[connection signal="input_event" from="Bookshelf" to="." method="_on_lamp_input_event"]
 [connection signal="input_event" from="Postel" to="." method="_on_postel_input_event"]
 [connection signal="input_event" from="Vesak" to="." method="_on_vesak_input_event"]
