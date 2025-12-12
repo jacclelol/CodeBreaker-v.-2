@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://xuxbk2n0xehj" path="res://assets/sprites/objects/bookshelf-Sheet.png" id="4_dfefq"]
 [ext_resource type="Texture2D" uid="uid://noer0enkqlj2" path="res://assets/sprites/objects/bed-Sheet.png" id="5_i411l"]
 [ext_resource type="Texture2D" uid="uid://b2v7hsfrgwiie" path="res://assets/sprites/objects/věšák.png" id="6_sc5nd"]
-[ext_resource type="PackedScene" uid="uid://cn621y7agcojn" path="res://door.tscn" id="7_ln1k6"]
+[ext_resource type="PackedScene" uid="uid://cn621y7agcojn" path="res://scenes/objects/door/door.tscn" id="7_ln1k6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_671wp"]
 atlas = ExtResource("4_dfefq")

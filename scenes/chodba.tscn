@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://wmggbdwbqa28"]
 
-[ext_resource type="PackedScene" uid="uid://bf8ctexfk0mg4" path="res://player/player.tscn" id="1_2vpoi"]
-[ext_resource type="Script" uid="uid://tmomr4acaw5w" path="res://scenes/1/main_scene.gd" id="1_3cwer"]
-[ext_resource type="PackedScene" uid="uid://cn621y7agcojn" path="res://door.tscn" id="7_kswcb"]
+[ext_resource type="Script" uid="uid://tmomr4acaw5w" path="res://scenes/1/main_scene.gd" id="1_efo6h"]
+[ext_resource type="PackedScene" uid="uid://bf8ctexfk0mg4" path="res://player/player.tscn" id="2_jdeig"]
+[ext_resource type="PackedScene" uid="uid://cn621y7agcojn" path="res://scenes/objects/door/door.tscn" id="3_q55uh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gyfs4"]
 normal = Vector2(1, 0)
@@ -18,13 +18,13 @@ normal = Vector2(-0.01716414, -0.99985266)
 distance = 39.801968
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_3cwer")
+script = ExtResource("1_efo6h")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(962.75006, 533)
 scale = Vector2(1.4244791, 1.4244791)
 
-[node name="Player" parent="." instance=ExtResource("1_2vpoi")]
+[node name="Player" parent="." instance=ExtResource("2_jdeig")]
 z_index = 1
 position = Vector2(1205, 308)
 scale = Vector2(2.67, 2.67)
@@ -47,7 +47,7 @@ shape = SubResource("WorldBoundaryShape2D_8mm7a")
 position = Vector2(1919, 1105)
 shape = SubResource("WorldBoundaryShape2D_hq1ik")
 
-[node name="Door" parent="." instance=ExtResource("7_kswcb")]
+[node name="Door" parent="." instance=ExtResource("3_q55uh")]
 position = Vector2(1626.0001, 210.00002)
 scale = Vector2(2.8799987, 4.3199997)
 target_scene_path = "uid://0kjxsbr8ri00"
