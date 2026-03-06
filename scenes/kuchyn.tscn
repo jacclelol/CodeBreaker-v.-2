@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://wmggbdwbqa28"]
+[gd_scene format=3 uid="uid://yu8mu17d1esc"]
 
-[ext_resource type="Script" uid="uid://tmomr4acaw5w" path="res://scenes/1/main_scene.gd" id="1_efo6h"]
-[ext_resource type="PackedScene" uid="uid://bf8ctexfk0mg4" path="res://player/player.tscn" id="2_jdeig"]
-[ext_resource type="Texture2D" uid="uid://ca05n6gvcdbv7" path="res://assets/sprites/backgrounds/chodba.png" id="2_q55uh"]
-[ext_resource type="PackedScene" uid="uid://cn621y7agcojn" path="res://scenes/objects/door/door.tscn" id="3_q55uh"]
+[ext_resource type="Script" uid="uid://tmomr4acaw5w" path="res://scenes/1/main_scene.gd" id="1_88yck"]
+[ext_resource type="Texture2D" uid="uid://dukolxvvnfkj4" path="res://assets/sprites/backgrounds/kuchyn.png" id="2_88yck"]
+[ext_resource type="PackedScene" uid="uid://bf8ctexfk0mg4" path="res://player/player.tscn" id="3_3loka"]
+[ext_resource type="PackedScene" uid="uid://cn621y7agcojn" path="res://scenes/objects/door/door.tscn" id="4_1lqe7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gyfs4"]
 normal = Vector2(1, 0)
@@ -19,16 +19,16 @@ normal = Vector2(-0.01716414, -0.99985266)
 distance = 39.801968
 
 [node name="Node2D" type="Node2D" unique_id=1625161438]
-script = ExtResource("1_efo6h")
+script = ExtResource("1_88yck")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1203627784]
-position = Vector2(962.75006, 533)
-scale = Vector2(1.4244791, 1.4244791)
-texture = ExtResource("2_q55uh")
+position = Vector2(969.974, 542.7526)
+scale = Vector2(2.0147607, 1.8129109)
+texture = ExtResource("2_88yck")
 
-[node name="Player" parent="." unique_id=620131643 instance=ExtResource("2_jdeig")]
+[node name="Player" parent="." unique_id=620131643 instance=ExtResource("3_3loka")]
 z_index = 1
-position = Vector2(571.00006, 612)
+position = Vector2(209.00006, 774.00006)
 scale = Vector2(2.67, 2.67)
 
 [node name="borders" type="StaticBody2D" parent="." unique_id=535494851]
@@ -49,7 +49,7 @@ shape = SubResource("WorldBoundaryShape2D_8mm7a")
 position = Vector2(1919, 1105)
 shape = SubResource("WorldBoundaryShape2D_hq1ik")
 
-[node name="Door" parent="." unique_id=1734753233 instance=ExtResource("3_q55uh")]
-position = Vector2(1342, 427)
+[node name="Door" parent="." unique_id=1734753233 instance=ExtResource("4_1lqe7")]
+position = Vector2(2390, 101.00003)
 scale = Vector2(2.8799987, 4.3199997)
-target_scene_path = "res://scenes/kuchyn.tscn"
+target_scene_path = "uid://0kjxsbr8ri00"

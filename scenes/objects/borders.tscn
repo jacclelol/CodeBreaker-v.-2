@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds557n5q854d"]
+[gd_scene format=3 uid="uid://ds557n5q854d"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tuip0"]
 normal = Vector2(1, 0)
@@ -13,20 +13,20 @@ normal = Vector2(1, 0)
 normal = Vector2(-0.01716414, -0.99985266)
 distance = 39.801968
 
-[node name="borders" type="StaticBody2D"]
+[node name="borders" type="StaticBody2D" unique_id=1034872394]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1162904715]
 position = Vector2(1922, 1)
 rotation = -3.138214
 shape = SubResource("WorldBoundaryShape2D_tuip0")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=509582538]
 shape = SubResource("WorldBoundaryShape2D_nnbri")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1002387735]
 position = Vector2(0, 1080)
 shape = SubResource("WorldBoundaryShape2D_1vcar")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=31259106]
 position = Vector2(1919, 1105)
 shape = SubResource("WorldBoundaryShape2D_d28qp")

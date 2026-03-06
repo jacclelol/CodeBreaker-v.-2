@@ -45,11 +45,10 @@ func _physics_process(_delta):
 			move_and_slide()
 			update_animation(direction)
 			
-			# Kontrola kolize se zdí (viz předchozí dotaz)
 			if get_slide_collision_count() > 0 and velocity.length() < 10:
 				stop_movement(true)
 		else:
-			stop_movement(false)
+			stop_movement(true)
 			
 func stop_movement(success: bool = false):
 	if is_changing:

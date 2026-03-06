@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://0kjxsbr8ri00"]
+[gd_scene format=3 uid="uid://0kjxsbr8ri00"]
 
 [ext_resource type="Script" uid="uid://tmomr4acaw5w" path="res://scenes/1/main_scene.gd" id="1_71ul0"]
 [ext_resource type="Texture2D" uid="uid://ph85pn0m5hgn" path="res://assets/sprites/backgrounds/pokojik.png" id="2_71ul0"]
@@ -107,72 +107,72 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=1539332201]
 script = ExtResource("1_71ul0")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=974926551]
 position = Vector2(962.75006, 533)
 scale = Vector2(1.4244791, 1.4244791)
 texture = ExtResource("2_71ul0")
 
-[node name="Player" parent="." instance=ExtResource("3_ln1k6")]
+[node name="Player" parent="." unique_id=828282546 instance=ExtResource("3_ln1k6")]
 z_index = 1
 position = Vector2(1292.0001, 732.00006)
 scale = Vector2(2.67, 2.67)
 
-[node name="Bookshelf" type="StaticBody2D" parent="."]
+[node name="Bookshelf" type="StaticBody2D" parent="." unique_id=83452364]
 texture_filter = 1
 position = Vector2(801, 322)
 input_pickable = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bookshelf"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bookshelf" unique_id=1085459905]
 position = Vector2(3.0000305, 2.000021)
 scale = Vector2(5.8124995, 5.8124995)
 sprite_frames = SubResource("SpriteFrames_2jcla")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Bookshelf"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Bookshelf" unique_id=1664320027]
 position = Vector2(-126, -10.087944)
 scale = Vector2(1, 0.8169406)
 polygon = PackedVector2Array(1, 9, 0, 334.2813, 270, 336.7295, 266, -324.27332, 3, -316.92883, 2.3568115, -212.10638)
 
-[node name="borders" type="StaticBody2D" parent="."]
+[node name="borders" type="StaticBody2D" parent="." unique_id=299576115]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="borders"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders" unique_id=1963617417]
 position = Vector2(1922, 1)
 rotation = -3.138214
 shape = SubResource("WorldBoundaryShape2D_gyfs4")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders" unique_id=1330885996]
 shape = SubResource("WorldBoundaryShape2D_d5x1h")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders" unique_id=486405539]
 position = Vector2(0, 1080)
 shape = SubResource("WorldBoundaryShape2D_8mm7a")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders" unique_id=1226239140]
 position = Vector2(1919, 1105)
 shape = SubResource("WorldBoundaryShape2D_hq1ik")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="borders"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="borders" unique_id=1398708211]
 position = Vector2(452, 631)
 rotation = 2.6202505
 shape = SubResource("WorldBoundaryShape2D_hq1ik")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="borders"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="borders" unique_id=605475332]
 position = Vector2(1093, 542)
 rotation = 3.154244
 shape = SubResource("WorldBoundaryShape2D_hq1ik")
 
-[node name="Postel" type="StaticBody2D" parent="."]
+[node name="Postel" type="StaticBody2D" parent="." unique_id=1659123718]
 position = Vector2(374, 825)
 scale = Vector2(0.88, 0.88)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Postel"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Postel" unique_id=705330209]
 scale = Vector2(1.9847858, 1.9847858)
 polygon = PackedVector2Array(-175, 141, 251.41252, 148.63065, 252.924, 75.071075, 253.93169, 26.703125, 84.14006, 29.726135, -5.54216, 31.23761, -73.055756, 14.611145, -81.117065, 2.0153198, -110.33937, -9.572815, -108, -37, -105, -60, -108, -108, -200, -79, -198, 142)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Postel"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Postel" unique_id=974585039]
 z_index = 2
 position = Vector2(17, -4)
 scale = Vector2(7.1750007, 7.1750007)
@@ -180,22 +180,22 @@ sprite_frames = SubResource("SpriteFrames_671wp")
 animation = &"postel"
 autoplay = "postel"
 
-[node name="Vesak" type="StaticBody2D" parent="."]
+[node name="Vesak" type="StaticBody2D" parent="." unique_id=1599068983]
 texture_filter = 1
 position = Vector2(1025, 394)
 input_pickable = true
 
-[node name="AnimatedSprite2D" type="Sprite2D" parent="Vesak"]
+[node name="AnimatedSprite2D" type="Sprite2D" parent="Vesak" unique_id=1544440931]
 position = Vector2(18.300018, -4.49998)
 scale = Vector2(5.8124995, 5.8124995)
 texture = ExtResource("6_sc5nd")
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Vesak"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Vesak" unique_id=1222771895]
 position = Vector2(-110.70001, -16.587944)
 scale = Vector2(1, 0.8169406)
 polygon = PackedVector2Array(35, 22.141113, 37, 266.95697, 196, 268.18103, 216, -264.29343, 36, -254.5008)
 
-[node name="Door" parent="." instance=ExtResource("7_ln1k6")]
+[node name="Door" parent="." unique_id=1682745405 instance=ExtResource("7_ln1k6")]
 position = Vector2(1626.0001, 210.00002)
 scale = Vector2(2.8799987, 4.3199997)
 target_scene_path = "uid://wmggbdwbqa28"
