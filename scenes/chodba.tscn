@@ -6,16 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://cn621y7agcojn" path="res://scenes/objects/door/door.tscn" id="3_q55uh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gyfs4"]
-normal = Vector2(1, 0)
+normal = Vector2(-0.00035735828, -0.9999999)
+distance = 77.9657
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d5x1h"]
-normal = Vector2(0, 1)
+normal = Vector2(0.00523553, -0.99998623)
+distance = 94.11372
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8mm7a"]
-normal = Vector2(1, 0)
+normal = Vector2(0.6129971, 0.79008514)
+distance = 124.32381
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hq1ik"]
-normal = Vector2(-0.01716414, -0.99985266)
+normal = Vector2(-0.6236804, 0.78167945)
 distance = 39.801968
 
 [node name="Node2D" type="Node2D" unique_id=1625161438]
@@ -32,24 +35,31 @@ position = Vector2(571.00006, 612)
 scale = Vector2(2.67, 2.67)
 
 [node name="borders" type="StaticBody2D" parent="." unique_id=535494851]
+position = Vector2(-25, -10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="borders" unique_id=2065438353]
-position = Vector2(1922, 1)
+position = Vector2(981, 501)
 rotation = -3.138214
 shape = SubResource("WorldBoundaryShape2D_gyfs4")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="borders" unique_id=1286124057]
+position = Vector2(980, 1167)
 shape = SubResource("WorldBoundaryShape2D_d5x1h")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="borders" unique_id=91379148]
-position = Vector2(0, 1080)
+position = Vector2(156, 940)
 shape = SubResource("WorldBoundaryShape2D_8mm7a")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="borders" unique_id=1983687394]
-position = Vector2(1919, 1105)
+position = Vector2(1822, 1027)
 shape = SubResource("WorldBoundaryShape2D_hq1ik")
 
 [node name="Door" parent="." unique_id=1734753233 instance=ExtResource("3_q55uh")]
 position = Vector2(1342, 427)
 scale = Vector2(2.8799987, 4.3199997)
+target_scene_path = "res://scenes/kuchyn.tscn"
+
+[node name="Door2" parent="." unique_id=381303364 instance=ExtResource("3_q55uh")]
+position = Vector2(878.00006, 323.99997)
+scale = Vector2(5.4283314, 3.5836883)
 target_scene_path = "res://scenes/kuchyn.tscn"
