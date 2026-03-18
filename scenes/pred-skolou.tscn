@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3sdg32vxpqxx"]
+
+[ext_resource type="Script" uid="uid://tmomr4acaw5w" path="res://scenes/1/main_scene.gd" id="1_uh1yj"]
+[ext_resource type="PackedScene" uid="uid://bf8ctexfk0mg4" path="res://player/player.tscn" id="3_1pcc7"]
+[ext_resource type="PackedScene" uid="uid://cn621y7agcojn" path="res://scenes/objects/door/door.tscn" id="4_n4wxq"]
+[ext_resource type="Texture2D" uid="uid://cre73p52xasog" path="res://scenes/Gemini_Generated_Image_hwgvn2hwgvn2hwgv.png" id="4_uh1yj"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gyfs4"]
+normal = Vector2(-0.00035735828, -0.9999999)
+distance = 77.9657
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d5x1h"]
+normal = Vector2(0.00523553, -0.99998623)
+distance = 94.11372
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8mm7a"]
+normal = Vector2(0.6129971, 0.79008514)
+distance = 124.32381
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hq1ik"]
+normal = Vector2(-0.6236804, 0.78167945)
+distance = 39.801968
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_uh1yj")
+
+[node name="Player" parent="." instance=ExtResource("3_1pcc7")]
+z_index = 1
+position = Vector2(1677, 819.00006)
+scale = Vector2(2.67, 2.67)
+
+[node name="borders" type="StaticBody2D" parent="."]
+position = Vector2(-25, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders"]
+position = Vector2(981, 501)
+rotation = -3.138214
+shape = SubResource("WorldBoundaryShape2D_gyfs4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders"]
+position = Vector2(980, 1167)
+shape = SubResource("WorldBoundaryShape2D_d5x1h")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders"]
+position = Vector2(156, 940)
+shape = SubResource("WorldBoundaryShape2D_8mm7a")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders"]
+position = Vector2(1822, 1027)
+shape = SubResource("WorldBoundaryShape2D_hq1ik")
+
+[node name="Door" parent="." instance=ExtResource("4_n4wxq")]
+position = Vector2(923, 482)
+scale = Vector2(7.280001, 4.68)
+target_scene_path = "uid://d04omfqym3rlv"
+
+[node name="GeminiGeneratedImageHwgvn2Hwgvn2Hwgv" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1029, 531)
+scale = Vector2(1.4941521, 1.3788265)
+texture = ExtResource("4_uh1yj")

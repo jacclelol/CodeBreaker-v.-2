@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://yu8mu17d1esc"]
+[gd_scene load_steps=9 format=3 uid="uid://yu8mu17d1esc"]
 
 [ext_resource type="Script" uid="uid://tmomr4acaw5w" path="res://scenes/1/main_scene.gd" id="1_88yck"]
 [ext_resource type="Texture2D" uid="uid://dukolxvvnfkj4" path="res://assets/sprites/backgrounds/kuchyn.png" id="2_88yck"]
@@ -18,38 +18,38 @@ normal = Vector2(1, 0)
 normal = Vector2(-0.01716414, -0.99985266)
 distance = 39.801968
 
-[node name="Node2D" type="Node2D" unique_id=1625161438]
+[node name="Node2D" type="Node2D"]
 script = ExtResource("1_88yck")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1203627784]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(969.974, 542.7526)
 scale = Vector2(2.0147607, 1.8129109)
 texture = ExtResource("2_88yck")
 
-[node name="Player" parent="." unique_id=620131643 instance=ExtResource("3_3loka")]
+[node name="Player" parent="." instance=ExtResource("3_3loka")]
 z_index = 1
 position = Vector2(209.00006, 774.00006)
 scale = Vector2(2.67, 2.67)
 
-[node name="borders" type="StaticBody2D" parent="." unique_id=535494851]
+[node name="borders" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="borders" unique_id=2065438353]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders"]
 position = Vector2(1922, 1)
 rotation = -3.138214
 shape = SubResource("WorldBoundaryShape2D_gyfs4")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders" unique_id=1286124057]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders"]
 shape = SubResource("WorldBoundaryShape2D_d5x1h")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders" unique_id=91379148]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders"]
 position = Vector2(0, 1080)
 shape = SubResource("WorldBoundaryShape2D_8mm7a")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders" unique_id=1983687394]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders"]
 position = Vector2(1919, 1105)
 shape = SubResource("WorldBoundaryShape2D_hq1ik")
 
-[node name="Door" parent="." unique_id=1734753233 instance=ExtResource("4_1lqe7")]
-position = Vector2(2390, 101.00003)
+[node name="Door" parent="." instance=ExtResource("4_1lqe7")]
+position = Vector2(104, 585)
 scale = Vector2(2.8799987, 4.3199997)
-target_scene_path = "uid://0kjxsbr8ri00"
+target_scene_path = "uid://wmggbdwbqa28"
