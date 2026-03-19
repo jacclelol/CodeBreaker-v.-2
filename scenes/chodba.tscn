@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://wmggbdwbqa28"]
+[gd_scene format=3 uid="uid://wmggbdwbqa28"]
 
 [ext_resource type="Script" uid="uid://tmomr4acaw5w" path="res://scenes/1/main_scene.gd" id="1_efo6h"]
 [ext_resource type="PackedScene" uid="uid://bf8ctexfk0mg4" path="res://player/player.tscn" id="2_jdeig"]
 [ext_resource type="Texture2D" uid="uid://ca05n6gvcdbv7" path="res://assets/sprites/backgrounds/chodba.png" id="2_q55uh"]
 [ext_resource type="PackedScene" uid="uid://cn621y7agcojn" path="res://scenes/objects/door/door.tscn" id="3_q55uh"]
+[ext_resource type="Script" uid="uid://cqpux3fq4b55w" path="res://scenes/zona.gd" id="5_q55uh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gyfs4"]
 normal = Vector2(-0.00035735828, -0.9999999)
@@ -21,45 +22,71 @@ distance = 124.32381
 normal = Vector2(-0.6236804, 0.78167945)
 distance = 39.801968
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q55uh"]
+size = Vector2(739.623, 122.699)
+
+[node name="Node2D" type="Node2D" unique_id=934574823]
 script = ExtResource("1_efo6h")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=1156283070]
 position = Vector2(962.75006, 533)
 scale = Vector2(1.4244791, 1.4244791)
 texture = ExtResource("2_q55uh")
 
-[node name="Player" parent="." instance=ExtResource("2_jdeig")]
+[node name="Player" parent="." unique_id=1240927427 instance=ExtResource("2_jdeig")]
 z_index = 1
 position = Vector2(571.00006, 612)
 scale = Vector2(2.67, 2.67)
 
-[node name="borders" type="StaticBody2D" parent="."]
+[node name="borders" type="StaticBody2D" parent="." unique_id=937762760]
 position = Vector2(-25, -10)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="borders"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders" unique_id=197893292]
 position = Vector2(981, 501)
 rotation = -3.138214
 shape = SubResource("WorldBoundaryShape2D_gyfs4")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders" unique_id=2108917012]
 position = Vector2(980, 1167)
 shape = SubResource("WorldBoundaryShape2D_d5x1h")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders" unique_id=1153958344]
 position = Vector2(156, 940)
 shape = SubResource("WorldBoundaryShape2D_8mm7a")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders" unique_id=1767169890]
 position = Vector2(1822, 1027)
 shape = SubResource("WorldBoundaryShape2D_hq1ik")
 
-[node name="Door" parent="." instance=ExtResource("3_q55uh")]
+[node name="Door" parent="." unique_id=1963259980 instance=ExtResource("3_q55uh")]
 position = Vector2(1342, 427)
 scale = Vector2(2.8799987, 4.3199997)
 target_scene_path = "res://scenes/kuchyn.tscn"
 
-[node name="Door2" parent="." instance=ExtResource("3_q55uh")]
+[node name="Door2" parent="." unique_id=186210289 instance=ExtResource("3_q55uh")]
 position = Vector2(878.00006, 323.99997)
 scale = Vector2(5.4283314, 3.5836883)
 target_scene_path = "uid://bjlb2smr3jmkn"
+
+[node name="Zona" type="Area2D" parent="." unique_id=350883714 node_paths=PackedStringArray("blizko", "daleko")]
+position = Vector2(929, 684)
+script = ExtResource("5_q55uh")
+blizko = NodePath("blizko")
+daleko = NodePath("daleko")
+max_velikost = Vector2(2.6, 2.6)
+min_velikost = Vector2(1.25, 1.25)
+
+[node name="blizko" type="Marker2D" parent="Zona" unique_id=1378505001]
+position = Vector2(24, 386)
+
+[node name="daleko" type="Marker2D" parent="Zona" unique_id=1749569863]
+position = Vector2(36, -665)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zona" unique_id=815010656]
+position = Vector2(32.99994, -146)
+rotation = -3.1415925
+scale = Vector2(2.6094375, 8.802029)
+shape = SubResource("RectangleShape2D_q55uh")
+
+[connection signal="body_entered" from="Zona" to="Zona" method="_on_body_entered"]
+[connection signal="body_exited" from="Zona" to="Zona" method="_on_body_exited"]

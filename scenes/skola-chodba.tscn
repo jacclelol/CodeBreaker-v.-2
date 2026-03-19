@@ -1,78 +1,84 @@
-[gd_scene load_steps=9 format=3 uid="uid://d04omfqym3rlv"]
+[gd_scene format=3 uid="uid://d04omfqym3rlv"]
 
 [ext_resource type="Script" uid="uid://tmomr4acaw5w" path="res://scenes/1/main_scene.gd" id="1_qyc43"]
 [ext_resource type="PackedScene" uid="uid://bf8ctexfk0mg4" path="res://player/player.tscn" id="2_4ydxl"]
 [ext_resource type="PackedScene" uid="uid://cn621y7agcojn" path="res://scenes/objects/door/door.tscn" id="3_p8671"]
 [ext_resource type="Texture2D" uid="uid://cn315cjufv7kr" path="res://scenes/Gemini_Generated_Image_hgp5f6hgp5f6hgp5.png" id="4_qyc43"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gyfs4"]
-normal = Vector2(-0.00035735828, -0.9999999)
-distance = 77.9657
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d5x1h"]
-normal = Vector2(0.00523553, -0.99998623)
-distance = 94.11372
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8mm7a"]
-normal = Vector2(0.6129971, 0.79008514)
-distance = 124.32381
+[ext_resource type="Script" uid="uid://cqpux3fq4b55w" path="res://scenes/zona.gd" id="5_4ydxl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hq1ik"]
 normal = Vector2(-0.6236804, 0.78167945)
 distance = 39.801968
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8671"]
+size = Vector2(739.623, 122.699)
+
+[node name="Node2D" type="Node2D" unique_id=1707136307]
 script = ExtResource("1_qyc43")
 
-[node name="Player" parent="." instance=ExtResource("2_4ydxl")]
+[node name="Player" parent="." unique_id=722477823 instance=ExtResource("2_4ydxl")]
 z_index = 1
 position = Vector2(1009.0001, 811.00006)
 scale = Vector2(2.67, 2.67)
 
-[node name="borders" type="StaticBody2D" parent="."]
-position = Vector2(-25, -10)
+[node name="borders" type="StaticBody2D" parent="." unique_id=1164854816]
+position = Vector2(-29, 37)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="borders"]
-position = Vector2(981, 501)
-rotation = -3.138214
-shape = SubResource("WorldBoundaryShape2D_gyfs4")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders"]
-position = Vector2(980, 1167)
-shape = SubResource("WorldBoundaryShape2D_d5x1h")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders"]
-position = Vector2(156, 940)
-shape = SubResource("WorldBoundaryShape2D_8mm7a")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders"]
-position = Vector2(1822, 1027)
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders" unique_id=1944173387]
+position = Vector2(413.00003, 647)
+rotation = -1.0129061
 shape = SubResource("WorldBoundaryShape2D_hq1ik")
 
-[node name="Door" parent="." instance=ExtResource("3_p8671")]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="borders" unique_id=547352682]
+polygon = PackedVector2Array(1150, 61, 1122, 747, 2100, 863, 2093, -14)
+
+[node name="Door" parent="." unique_id=1503405220 instance=ExtResource("3_p8671")]
 position = Vector2(-43.000023, 421.00003)
 rotation = -0.26637846
 scale = Vector2(4.1850324, 5.081312)
 target_scene_path = "uid://dgdql335cmjhg"
 
-[node name="Door2" parent="." instance=ExtResource("3_p8671")]
+[node name="Door2" parent="." unique_id=1674907860 instance=ExtResource("3_p8671")]
 position = Vector2(888, 334)
 scale = Vector2(6.0800014, 3.2799997)
 target_scene_path = "uid://b4gyr3yx5lww2"
 
-[node name="Door3" parent="." instance=ExtResource("3_p8671")]
+[node name="Door3" parent="." unique_id=1690190886 instance=ExtResource("3_p8671")]
 position = Vector2(687, 362)
 scale = Vector2(1.7600012, 3.2799997)
 target_scene_path = "uid://ce5gc3ys2qx4p"
 
-[node name="Door4" parent="." instance=ExtResource("3_p8671")]
-position = Vector2(1425.0001, 855)
+[node name="Door4" parent="." unique_id=318968505 instance=ExtResource("3_p8671")]
+position = Vector2(1614.0002, 756)
 rotation = 0.10258657
 scale = Vector2(7.8400035, 3.2799997)
 target_scene_path = "uid://orrqkoum3p25"
 
-[node name="GeminiGeneratedImageHgp5f6Hgp5f6Hgp5" type="Sprite2D" parent="."]
+[node name="GeminiGeneratedImageHgp5f6Hgp5f6Hgp5" type="Sprite2D" parent="." unique_id=1391399530]
 z_index = -1
 position = Vector2(1037.0001, 553)
 scale = Vector2(1.5091242, 1.3692602)
 texture = ExtResource("4_qyc43")
+
+[node name="Zona" type="Area2D" parent="." unique_id=1747636641 node_paths=PackedStringArray("blizko", "daleko")]
+position = Vector2(929, 684)
+script = ExtResource("5_4ydxl")
+blizko = NodePath("blizko")
+daleko = NodePath("daleko")
+max_velikost = Vector2(3, 3)
+min_velikost = Vector2(0.7, 0.7)
+
+[node name="blizko" type="Marker2D" parent="Zona" unique_id=1586743788]
+position = Vector2(24, 386)
+
+[node name="daleko" type="Marker2D" parent="Zona" unique_id=1229925883]
+position = Vector2(36, -665)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zona" unique_id=1303556462]
+position = Vector2(32.99994, -146)
+rotation = -3.1415925
+scale = Vector2(2.6094375, 8.802029)
+shape = SubResource("RectangleShape2D_p8671")
+
+[connection signal="body_entered" from="Zona" to="Zona" method="_on_body_entered"]
+[connection signal="body_exited" from="Zona" to="Zona" method="_on_body_exited"]

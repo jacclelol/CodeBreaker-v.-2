@@ -7,13 +7,12 @@ var destination = Vector2()
 var is_moving = false
 var is_changing = false 
 var pending_action: Callable = Callable()
-var clothes = "pyjamas"
 var is_clothed = false
 var interaction_distance: float = 60.0
 
 func _ready() -> void:
 	destination = position
-	anim_sprite.play(clothes + "_idle")
+	anim_sprite.play(PlayerData.clothes + "_idle")
 	if not anim_sprite.animation_finished.is_connected(_on_animation_finished):
 		anim_sprite.animation_finished.connect(_on_animation_finished)
 
@@ -56,7 +55,7 @@ func stop_movement(success: bool = false):
 	velocity = Vector2.ZERO
 	is_moving = false
 
-	anim_sprite.play(clothes + "_idle")
+	anim_sprite.play(PlayerData.clothes + "_idle")
 	if success and pending_action.is_valid():
 		pending_action.call()
 	pending_action = Callable() 
@@ -70,15 +69,15 @@ func update_animation(dir: Vector2):
 
 	if abs(dir.x) > abs(dir.y):
 		if dir.x > 0:
-			dir_name = clothes + "_right"
+			dir_name = PlayerData.clothes + "_right"
 		else:
-			dir_name = clothes + "_left"
+			dir_name = PlayerData.clothes + "_left"
 	else:
 		# Jinak jdeme nahoru nebo dolů
 		if dir.y > 0:
-			dir_name = clothes + "_down"
+			dir_name = PlayerData.clothes + "_down"
 		else:
-			dir_name = clothes + "_up"
+			dir_name = PlayerData.clothes + "_up"
 
 	anim_sprite.play(dir_name)
 
@@ -99,9 +98,11 @@ func _on_animation_finished() -> void:
 		anim_sprite.play("clothes_reveal")
 	elif anim_sprite.animation == "clothes_reveal":
 		is_changing = false
-		clothes = "normal"
+		PlayerData.clothes = "normal"
 		is_clothed = true
-		anim_sprite.play(clothes + "_idle")
+		anim_sprite.play(PlayerData.clothes + "_idle")
+	if is_clothed: 
+		PlayerData.maobleceni = true
 
 func show_dialog(text, time):
 	Dialog.text = text

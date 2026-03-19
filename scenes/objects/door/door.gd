@@ -14,6 +14,12 @@ func _on_input_event(_viewport, event, _shape_idx):
 		var player = get_tree().get_first_node_in_group("player")
 		
 		if player:
-			player.move_and_interact(global_position, Callable(self, "change_scene_action"))
+			if PlayerData.maobleceni:
+				player.move_and_interact(global_position, Callable(self, "change_scene_action"))
+			else:
+				var dialog_akce = Callable(player, "show_dialog").bind("Nemám oblečení!", 2)
+				player.move_and_interact(global_position, dialog_akce)
+
+				
 		else:
 			print("Chyba: Hráč nebyl nalezen ve skupině 'Player'")

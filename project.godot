@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="CodeBreaker v2"
 run/main_scene="uid://bec4d1tjk2g2q"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -25,6 +25,7 @@ PauseMenu="*res://menu/pause_menu.tscn"
 Inventory="*res://player/Inventory/inventory.tscn"
 GlobalItems="*res://player/Inventory/GlobalItems.gd"
 SceneManager="*res://SceneManager.gd"
+PlayerData="*uid://t6s48owywk73"
 
 [display]
 

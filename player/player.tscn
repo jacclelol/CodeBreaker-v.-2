@@ -799,10 +799,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4flbx"]
-radius = 18.75
-height = 83.5
-
 [sub_resource type="LabelSettings" id="LabelSettings_dw050"]
 font = ExtResource("13_urp6f")
 font_size = 25
@@ -814,6 +810,7 @@ height = 54.0
 
 [node name="Player" type="CharacterBody2D" unique_id=2126841024 groups=["player"]]
 texture_filter = 1
+position = Vector2(1, -79)
 script = ExtResource("1_onrkg")
 speed = 250.0
 
@@ -823,12 +820,6 @@ scale = Vector2(2.76, 2.76)
 sprite_frames = SubResource("SpriteFrames_2hs0m")
 animation = &"normal_right"
 frame_progress = 0.18287212
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1484648158]
-position = Vector2(-0.5, 16.5)
-scale = Vector2(2, 2)
-shape = SubResource("CapsuleShape2D_4flbx")
-disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1787073592]
 limit_left = 0
@@ -843,6 +834,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Dialog" unique_id=445384841]
 texture_filter = 1
