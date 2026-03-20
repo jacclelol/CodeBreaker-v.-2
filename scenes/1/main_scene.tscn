@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://noer0enkqlj2" path="res://assets/sprites/objects/bed-Sheet.png" id="5_i411l"]
 [ext_resource type="Texture2D" uid="uid://b2v7hsfrgwiie" path="res://assets/sprites/objects/věšák.png" id="6_sc5nd"]
 [ext_resource type="PackedScene" uid="uid://cn621y7agcojn" path="res://scenes/objects/door/door.tscn" id="7_ln1k6"]
+[ext_resource type="AudioStream" uid="uid://dfkflwejx8hej" path="res://chill.mp3" id="8_ln1k6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_671wp"]
 atlas = ExtResource("4_dfefq")
@@ -199,6 +200,10 @@ polygon = PackedVector2Array(35, 22.141113, 37, 266.95697, 196, 268.18103, 216, 
 position = Vector2(1626.0001, 210.00002)
 scale = Vector2(2.8799987, 4.3199997)
 target_scene_path = "uid://wmggbdwbqa28"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=54864301]
+stream = ExtResource("8_ln1k6")
+autoplay = true
 
 [connection signal="input_event" from="Bookshelf" to="." method="_on_bookshelf_input_event"]
 [connection signal="input_event" from="Postel" to="." method="_on_postel_input_event"]
